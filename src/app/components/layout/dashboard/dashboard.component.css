@@ -1,0 +1,9 @@
+.example-card {
+    max-width: 250px;
+    height: auto;
+  }
+  .pokemon-card {
+    max-width: 200px;
+    height: 100px;
+    margin-top: 50px;
+  }

@@ -1,0 +1,14 @@
+<p>
+    <mat-toolbar class="p-3 mb-2 bg-warning " style="padding: 50px 25px 50px 25px;">
+        <button mat-button class="btn btn-outline-warning" aria-label="Example icon-button with menu icon">
+          <mat-icon class="text-danger">menu</mat-icon>
+        </button>
+        <span style="margin-right:20px;" class="text-light">Pokemon </span>
+       <form class="example-form">
+        <mat-form-field class="form">
+          <mat-label> Name or id </mat-label>
+          <input matInput="search" [(ngModel)]="pokemonName" name="pokemonName" id="pokemonName"/>
+        </mat-form-field>
+        <button mat-raised-button class="btn btn-outline-danger" (click)="sendValue(pokemonName)">Search</button>
+       </form> 
+    </mat-toolbar>

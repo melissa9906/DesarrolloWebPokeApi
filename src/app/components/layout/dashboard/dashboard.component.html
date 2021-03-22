@@ -1,0 +1,46 @@
+<app-header (name)='getName($event)'></app-header>
+<div class="container-fluid">
+    <div class="row px-md-5">
+        <div class="col-4">
+            <mat-card class="example-card" [class.mat-elevation-z8]="true" >
+                <mat-card-header>
+                    <mat-card-title class="text-danger" style="margin-bottom: 30px; ">Hi my name is {{pokemon.name}}
+                    </mat-card-title>
+                </mat-card-header>
+                <div class="row">
+                    <div class="col-sm">
+                        <img mat-card-image src="{{pokemon.sprites.front_default}}" alt="Pokemon" />
+                        <p class="text-warning"> Height: {{pokemon.height}}</p>
+                        <p class="text-warning">Weight: {{pokemon.weight}}</p>
+                    </div>
+                    <div class="col-sm">
+                        <mat-card-content>
+                            <mat-tab-group animationDuration="0ms">
+                                <mat-tab label="Abilities">
+                                    <li *ngFor="let abilities of pokemon.abilities"> {{abilities.ability.name}}</li>
+                                </mat-tab>
+                                <mat-tab label="Moves" class="text-warning">
+                                    <div style="overflow-y:scroll; height: 150px;">
+                                        <li *ngFor="let moves of pokemon.moves"> {{moves.move.name}}</li>
+                                    </div>
+                                </mat-tab>
+                            </mat-tab-group>
+                        </mat-card-content>
+                    </div>
+                </div>
+            </mat-card>
+        </div>
+    </div>
+        <div class="row px-md-5">
+        <div class="col-2" *ngFor="let pokemon of pokemons.results">
+            <mat-card class="pokemon-card" [class.mat-elevation-z8]="true" >
+                <mat-card-header>
+                    <mat-card-title class="text-primary" style="margin-bottom: 30px; ">Hi my name is {{pokemon.name}}
+                    </mat-card-title>
+                </mat-card-header>
+            </mat-card>
+        </div>
+    </div>
+</div>
+
+<app-paginator (pokemons)="getPokemons($event)"></app-paginator>
